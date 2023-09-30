@@ -1,0 +1,128 @@
+/* 
+General reset to remove default padding and margin from all elements
+*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 
+Set a background color for the body and use a font stack 
+that prioritizes Arial, falling back to sans-serif fonts.
+*/
+body {
+    background-color: #f4f4f4;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+}
+
+/* 
+Provide styling for the main container of the quiz application.
+This will center the content and give it a maximum width.
+*/
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 
+Styling for the main header. 
+Adds space below the header and centers the text.
+*/
+header {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* 
+Spacing for paragraphs, which includes descriptions or prompts.
+*/
+p {
+    margin-bottom: 20px;
+}
+
+/* 
+Generic styling for all buttons in the application.
+Provides consistent padding, color, and interactivity.
+*/
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* 
+Visual feedback when user hovers over a button.
+*/
+button:hover {
+    background-color: #0056b3;
+}
+
+/* 
+Section for questions and answers.
+Hiding initially, will be shown dynamically by JavaScript.
+*/
+.quiz-section {
+    display: none;
+}
+
+/* 
+Unordered list for answer choices.
+Spaces out the list items for clarity.
+*/
+#answers {
+    list-style-type: none;
+}
+
+/* 
+Provide some space between each answer choice.
+*/
+#answers li {
+    margin-bottom: 10px;
+}
+
+/* 
+Styling for the timer section.
+Make the text bold and slightly larger.
+*/
+.timer-section {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+/* 
+Section to save scores.
+Hiding initially, will be shown dynamically by JavaScript.
+*/
+.score-section {
+    display: none;
+}
+
+/* 
+Input field to enter initials.
+Add consistent padding and border.
+*/
+#initials {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* 
+Styling for the high scores section.
+Spaces out the list items and uses bullets.
+*/
+.high-scores-section ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
