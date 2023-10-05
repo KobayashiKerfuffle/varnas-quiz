@@ -1,83 +1,48 @@
-<!-- 
-Main HTML structure for the Code-Quiz application.
--->
-
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Coding Quiz</title>
 
-<head>
-    <!-- Standard meta info for character set and viewport -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Code Quiz</title>
-    <!-- Link to the external CSS file for styling -->
-    <link rel="stylesheet" href="./assets/css/styles.css">
-</head>
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+  </head>
 
-<body>
+  <body>
+    <div class="scores"><a href="highscores.html">View Highscores</a></div>
 
-    <!-- Main container for the entire quiz application -->
-    <div class="container">
+    <div class="timer">Time: <span id="time">0</span></div>
 
-        <!-- Heading displaying the title of the application -->
-        <header>
-            <h1>JavaScript Fundamentals Quiz</h1>
-        </header>
+    <div class="wrapper">
+      <div id="start-screen" class="start">
+        <h1>Coding Quiz Challenge</h1>
+        <p>
+          Try to answer the following code-related questions within the time
+          limit. Keep in mind that incorrect answers will penalize your
+          score/time by 15 seconds!
+        </p>
+        <button id="start">Start Quiz</button>
+      </div>
 
-        <!-- Section for the introduction and starting the quiz -->
-        <section class="intro">
-            <!-- Description or prompt for the user -->
-            <p>Test your JavaScript knowledge with this timed quiz! Click below to begin.</p>
-            <!-- Start button to kick off the quiz -->
-            <button id="start-btn">Start Quiz</button>
-        </section>
+      <div id="questions" class="hide">
+        <h2 id="question-title"></h2>
+        <div id="choices" class="choices"></div>
+      </div>
 
-        <!-- Section to display the current question and possible answers -->
-        <section class="quiz-section" hidden>
-            <!-- The current question will be displayed here -->
-            <h2 id="question">Question text will appear here</h2>
-            <!-- List for possible answers. These will be dynamically filled using JavaScript -->
-            <ul id="answers">
-                <!-- Sample format for an answer choice. Will be repeated for each option -->
-                <li><button class="answer-btn">Answer Option 1</button></li>
-            </ul>
+      <div id="end-screen" class="hide">
+        <h2>All done!</h2>
+        <p>Your final score is <span id="final-score"></span>.</p>
+        <p>
+          Enter initials: <input type="text" id="initials" max="3" />
+          <button id="submit">Submit</button>
+        </p>
+      </div>
 
-        <!-- Section to display and save the score once the quiz is over -->
-        <section class="score-section" hidden>
-            <!-- Prompt to enter initials and save the score -->
-            <p>Your score: <span id="score">0</span></p>
-            <label for="initials">Enter your initials:</label>
-            <input type="text" id="initials" placeholder="ABC">
-            <button id="save-score-btn">Save Score</button>
-        </section>
-
-        <!-- Section to display high scores -->
-        <section class="high-scores-section">
-            <h2>High Scores:</h2>
-            <!-- List of high scores, to be dynamically filled using JavaScript -->
-            <ul id="high-scores"></ul>
-        </section>
-
+      <div id="feedback" class="feedback hide"></div>
     </div>
 
-        <!-- Container for the timer fuction -->
-    <div class="container">
-
-        <!-- Heading displaying the title of the application -->
-        <header>
-            <h1>Timer</h1>
-        </header>
-
-        <!-- Section to display the timer -->
-        <section class="timer-section">
-            <!-- Display the remaining time for the quiz -->
-            <p>Time left: <span id="timer">60</span> seconds</p>
-        </section>
-
-    </div>
-
-    <!-- Linking the external JavaScript file which will handle all dynamic functionality of the quiz -->
-    <script src="./assets/js/script.js"></script>
-</body>
-
+    <script src="./assets/js/questions.js"></script>
+    <script src="./assets/js/logic.js"></script>
+  </body>
 </html>
