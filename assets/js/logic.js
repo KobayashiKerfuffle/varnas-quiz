@@ -28,20 +28,21 @@ function startQuiz() {
 function getQuestion() {
   // get current question object from array
   var currentQuestion = questions[currentQuestionIndex];
-
   // update title with current question
-  
-
+  questionTitle.textContent = currentQuestion.title;
   // clear out any old question choices
-  
-
+  choicesEl.innerHTML = "";
   // loop over choices
-
+  currentQuestion.choices.forEach(function (choice, i) {
     // create new button for each choice
- 
-
+    var choiceButton = document.createElement("button");
+    choiceButton.setAttribute("class", "choice");
+    choiceButton.setAttribute("value", choice);
+    choiceButton.textContent = choice;
+    choiceButton.onclick = questionClick;
     // display on the page
-   
+    choicesEl.appendChild(choiceButton);
+  })
   
 }
 
