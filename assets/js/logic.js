@@ -27,7 +27,7 @@ function startQuiz() {
 
 function getQuestion() {
   // get current question object from array
-  
+  var currentQuestion = questions[currentQuestionIndex];
 
   // update title with current question
   
