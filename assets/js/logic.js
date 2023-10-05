@@ -4,21 +4,24 @@ var time = questions.length * 15;
 var timerId;
 
 // variables to reference DOM elements
-
+var startButton = document.getElementById("start");
+var questionContainer = document.getElementById("questions");
+var questionTitle = document.getElementById("question-title");
+var choicesEl = document.getElementById("choices");
+var timeEl = document.getElementById("time");
+var endScreen = document.getElementById("end-screen");
+var finalScoreEl = document.getElementById("final-score");
+var submitButton = document.getElementById("submit");
 
 function startQuiz() {
   // hide start screen
- 
-
+  document.getElementById("start-screen").classList.add("hide");
   // un-hide questions section
-  
-
+  questionContainer.classList.remove("hide");
   // start timer
- 
-
+  timerId = setInterval(clockTick, 1000);
   // show starting time
-  
-
+  timeEl.textContent = time;
   getQuestion();
 }
 
